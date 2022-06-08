@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Newsletter;
-import com.example.demo.service.NewsletterService;
+import com.example.demo.model.entity.Newsletter;
+import com.example.demo.model.service.NewsletterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;

@@ -1,9 +1,9 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.CategoriaCursos;
-import com.example.demo.entity.Cursos;
-import com.example.demo.service.CursosCategoriasServiceImpl;
-import com.example.demo.service.CursosServiceImpl;
+import com.example.demo.model.entity.CategoriaCursos;
+import com.example.demo.model.entity.Cursos;
+import com.example.demo.model.service.CursosCategoriasServiceImpl;
+import com.example.demo.model.service.CursosServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
