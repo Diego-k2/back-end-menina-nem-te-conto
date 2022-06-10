@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.xml.bind.ValidationEventLocator;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -23,7 +24,7 @@ public class SenderMailService {
     @Autowired private NewsletterService newsletterService;
 
     @RequestMapping(path = "/newsletter", method = RequestMethod.POST)
-    public String newsLetter (@RequestParam(value = "email")String email) {
+    public String newsLetter (@RequestParam(value = "email")String email, @RequestParam(value = "nome")String nome, @RequestParam(value = "sobrenome") String sobrenome) {
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setText("A equipe do menina nem te conto agradece sua inscrição em nosso newsletter");
@@ -31,7 +32,7 @@ public class SenderMailService {
         message.setTo(email);
         message.setSubject("Obrigado por se inscrever em nosso NewsLetter");
         String horaAtual = new SimpleDateFormat("yyyy/MM/dd").format(Calendar.getInstance().getTime());
-        Newsletter newsletter = new Newsletter(email, horaAtual);
+        Newsletter newsletter = new Newsletter(email, nome, sobrenome, horaAtual);
 
         try {
             mailSender.send(message);

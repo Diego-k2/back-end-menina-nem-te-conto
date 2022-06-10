@@ -42,6 +42,7 @@ public class IdentificacaoGeral {
     private int status;
 
 
+
     public IdentificacaoGeral(){};
 
     public IdentificacaoGeral(String nome, String sobrenome, String cpf, String dt_nascimento, String telefone, String cep,

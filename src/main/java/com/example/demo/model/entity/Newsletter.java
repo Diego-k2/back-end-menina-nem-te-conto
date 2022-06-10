@@ -13,17 +13,24 @@ public class Newsletter {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "sobrenome")
+    private String sobrenome;
+
     @Column(name = "dt_cadastro")
     private String dtCadastro;
 
-    public Newsletter(String email, String dtCadastro) {
+
+    public Newsletter(String email, String nome, String sobrenome, String dtCadastro) {
         this.email = email;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
         this.dtCadastro = dtCadastro;
     }
 
-    public Newsletter() {
-
-    }
+    public Newsletter() {}
 
     public long getId() {
         return id;
@@ -39,6 +46,22 @@ public class Newsletter {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 
     public String getDtCadastro() {
