@@ -5,6 +5,7 @@ import com.example.demo.model.repository.CadastroFreelasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -33,6 +34,11 @@ public class CadastroFreelaServiceImpl implements CadastroFreelaService{
         }
 
         return cadastroFreelasRepository.save(alterFreelas);
+    }
+
+    @Override
+    public List<CadastroFreelas> listaCadastroFreelas() {
+        return cadastroFreelasRepository.findAll();
     }
 
     @Override

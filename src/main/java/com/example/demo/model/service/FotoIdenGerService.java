@@ -10,6 +10,8 @@ public interface FotoIdenGerService {
 
     FotosIdenGer upDateFotoIdenGer(FotosIdenGer fotosIdenGer, Long id);
 
+    List<FotosIdenGer> listaFotos();
+
     void deleteFotoIdenGer(Long id);
 
 }

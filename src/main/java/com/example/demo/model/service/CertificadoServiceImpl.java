@@ -5,7 +5,9 @@ import com.example.demo.model.repository.CertificadosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class CertificadoServiceImpl implements CertificadoService {
@@ -31,6 +33,12 @@ public class CertificadoServiceImpl implements CertificadoService {
 
         return certificadosRepository.save(atualizaCertificados);
     }
+
+    @Override
+    public List<Certificados> listaCertificados() {
+        return certificadosRepository.findAll();
+    }
+
 
     @Override
     public void deleteCertificado(Long id) {

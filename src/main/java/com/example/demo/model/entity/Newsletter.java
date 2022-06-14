@@ -16,17 +16,13 @@ public class Newsletter {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "sobrenome")
-    private String sobrenome;
-
     @Column(name = "dt_cadastro")
     private String dtCadastro;
 
 
-    public Newsletter(String email, String nome, String sobrenome, String dtCadastro) {
+    public Newsletter(String email, String nome, String dtCadastro) {
         this.email = email;
         this.nome = nome;
-        this.sobrenome = sobrenome;
         this.dtCadastro = dtCadastro;
     }
 
@@ -54,14 +50,6 @@ public class Newsletter {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
     }
 
     public String getDtCadastro() {

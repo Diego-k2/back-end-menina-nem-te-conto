@@ -8,12 +8,8 @@
 </head>
 <body>
 
-<form action="/cursos/novoCurso" method="post">
-    Nome <input type="text" name="nomeCurso">
-    Instituicao <input type="text" name="instituicao">
-    Valor <input type="text" name="valor">
-    Tipo formacao <input type="text" name="tipo_formacao">
-    Categoria <input type="text" name="nome_cate">
+<form action="/salvaImg" method="post" enctype="multipart/form-data">
+    Categoria <input type="file" name="foto">
     <input type="submit">
 </form>
 

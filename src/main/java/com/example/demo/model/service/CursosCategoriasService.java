@@ -6,4 +6,6 @@ public interface CursosCategoriasService {
 
     public CategoriaCursos saveCategoriasCursos(CategoriaCursos categoriaCursos);
 
+    public void deleteCurso(Long id);
+
 }

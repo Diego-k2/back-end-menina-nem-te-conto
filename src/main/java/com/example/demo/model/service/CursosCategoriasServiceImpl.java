@@ -16,4 +16,9 @@ public class CursosCategoriasServiceImpl implements CursosCategoriasService {
     public CategoriaCursos saveCategoriasCursos(CategoriaCursos categoriaCursos) {
         return cursosCategoriaRepository.save(categoriaCursos);
     }
+
+    @Override
+    public void deleteCurso(Long id) {
+        cursosCategoriaRepository.deleteById(id);
+    }
 }

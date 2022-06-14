@@ -11,8 +11,8 @@ public class FotosServicos {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "caminho_ft")
-    private String caminhoFt;
+    @Lob
+    private byte[] caminhoFt;
 
     @Column(name = "data_ft")
     private String dataFt;
@@ -24,7 +24,7 @@ public class FotosServicos {
     @JoinColumn(name = "fk_casd_freela")
     private CadastroFreelas cadastroFreelas;
 
-    public FotosServicos(String caminhoFt, String dataFt, String tituloDt, CadastroFreelas cadastroFreelas) {
+    public FotosServicos(byte[] caminhoFt, String dataFt, String tituloDt, CadastroFreelas cadastroFreelas) {
         this.caminhoFt = caminhoFt;
         this.dataFt = dataFt;
         this.tituloDt = tituloDt;
@@ -41,11 +41,11 @@ public class FotosServicos {
         this.id = id;
     }
 
-    public String getCaminhoFt() {
+    public byte[] getCaminhoFt() {
         return caminhoFt;
     }
 
-    public void setCaminhoFt(String caminhoFt) {
+    public void setCaminhoFt(byte[] caminhoFt) {
         this.caminhoFt = caminhoFt;
     }
 

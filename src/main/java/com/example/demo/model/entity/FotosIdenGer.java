@@ -12,14 +12,14 @@ public class FotosIdenGer {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "caminho_ft")
-    private String caminhoFt;
+    @Lob
+    private byte[] caminhoFt;
 
     @ManyToOne
     @JoinColumn(name = "fk_iden")
     private IdentificacaoGeral identificacaoGeral;
 
-    public FotosIdenGer(String caminhoFt, IdentificacaoGeral identificacaoGeral) {
+    public FotosIdenGer(byte[] caminhoFt, IdentificacaoGeral identificacaoGeral) {
         this.caminhoFt = caminhoFt;
         this.identificacaoGeral = identificacaoGeral;
     }
@@ -34,11 +34,11 @@ public class FotosIdenGer {
         this.id = id;
     }
 
-    public String getCaminhoFt() {
+    public byte[] getCaminhoFt() {
         return caminhoFt;
     }
 
-    public void setCaminhoFt(String caminhoFt) {
+    public void setCaminhoFt(byte[] caminhoFt) {
         this.caminhoFt = caminhoFt;
     }
 
