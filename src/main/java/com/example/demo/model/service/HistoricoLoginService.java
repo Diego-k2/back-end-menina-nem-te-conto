@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface HistoricoLoginService {
 
-    HistoricoLogin historicoLogin(HistoricoLogin historicoLogin);
+    HistoricoLogin saveLogin(HistoricoLogin historicoLogin);
 
     List<HistoricoLogin> historicoLoginList();
 

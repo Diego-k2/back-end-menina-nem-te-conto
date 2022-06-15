@@ -13,6 +13,10 @@ public interface IdentificacaoGeralService {
 
     IdentificacaoGeral updateIdentificacaoGeral(IdentificacaoGeral identificacaoGeral);
 
+    List<IdentificacaoGeral> listaEmailCpf(String email, String cpf);
+
+    IdentificacaoGeral fazLogin(String email, String senha);
+
     void deleteIdentificacaoGeralById(long identificacaoGeralid);
 
 

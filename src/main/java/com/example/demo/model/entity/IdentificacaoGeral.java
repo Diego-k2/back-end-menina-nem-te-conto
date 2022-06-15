@@ -46,7 +46,7 @@ public class IdentificacaoGeral {
     public IdentificacaoGeral(){};
 
     public IdentificacaoGeral(String nome, String sobrenome, String cpf, String dt_nascimento, String telefone, String cep,
-                              String email, String senha, String dt_cadastro, int status) {
+                              String email, String senha, String dt_cadastro) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.cpf = cpf;
@@ -56,7 +56,6 @@ public class IdentificacaoGeral {
         this.email = email;
         this.senha = senha;
         this.dtCadastro = dt_cadastro;
-        this.status = status;
     }
 
     public long getId() {

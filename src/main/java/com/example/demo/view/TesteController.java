@@ -31,17 +31,19 @@ public class TesteController {
     }
 
 
-    @PostMapping("/salvaImg")
-    public String salva(ModelMap model, @RequestParam(name = "foto")MultipartFile foto) throws IOException {
-        IdentificacaoGeral identificacaoGeral = new IdentificacaoGeral("Diego","Santos","938","2011/10/01","111", "5454","dieo", "123", "2022/10/01", 1);
+   // @PostMapping("/salvaImg")
+    //public String salva(ModelMap model, @RequestParam(name = "foto")MultipartFile foto) throws IOException {
+//        IdentificacaoGeral identificacaoGeral = new IdentificacaoGeral("Diego","Santos","938","2011/10/01","111", "5454","dieo", "123", "2022/10/01", 1);
+//
+//        FotosIdenGer fotosIdenGer = new FotosIdenGer(foto.getBytes(), identificacaoGeral );
+//
+//        identificacaoGeralService.saveDepartment(identificacaoGeral);
+//        fotoIdenGerService.saveFotoIdenGer(fotosIdenGer);
 
-        FotosIdenGer fotosIdenGer = new FotosIdenGer(foto.getBytes(), identificacaoGeral );
+      //  return "home";
+    //}
 
-        identificacaoGeralService.saveDepartment(identificacaoGeral);
-        fotoIdenGerService.saveFotoIdenGer(fotosIdenGer);
-
-        return "home";
-    }
-
+    @GetMapping("/cadastrado")
+    public String cadastrado(ModelMap model){return "cadastrado";}
 
 }

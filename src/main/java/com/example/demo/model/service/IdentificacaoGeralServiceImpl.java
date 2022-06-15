@@ -65,11 +65,17 @@ public class IdentificacaoGeralServiceImpl implements IdentificacaoGeralService 
             alterIden.setSenha(identificacaoGeral.getSenha());
         }
 
+        return identificacaoGeralRepository.save(alterIden);
+    }
 
+    @Override
+    public List<IdentificacaoGeral> listaEmailCpf(String email, String cpf) {
+        return identificacaoGeralRepository.listaEmailCpf(email, cpf);
+    }
 
-
-
-        return null;
+    @Override
+    public IdentificacaoGeral fazLogin(String email, String senha) {
+        return identificacaoGeralRepository.fazerLogin(email, senha);
     }
 
     @Override

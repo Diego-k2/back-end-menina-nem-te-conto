@@ -22,4 +22,9 @@ public class NewsletterServiceImpl implements NewsletterService {
     public void deleteNewsletterById(Long newsletterId){
         newsletterRepository.deleteById(newsletterId);
     }
+
+    @Override
+    public List<Newsletter> listaNewsletterCadastrado(String email) {
+        return newsletterRepository.listaNewsletterCadastrado(email);
+    }
 }
