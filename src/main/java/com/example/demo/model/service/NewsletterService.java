@@ -12,6 +12,6 @@ public interface NewsletterService {
 
     void deleteNewsletterById(Long newsletterId);
 
-    List<Newsletter> listaNewsletterCadastrado(String email);
+    List<Newsletter> findByEmail (String email);
 
 }

@@ -16,15 +16,18 @@ public class CadastroFreelas {
     @Column(name = "area_formacao")
     private String areaFormacao;
 
+    @Column(name = "sobremim")
+    private String sobreMim;
+
     @ManyToOne
     @JoinColumn (name = "fk_iden_ger")
     private IdentificacaoGeral identificacaoGeral;
 
 
-
-    public CadastroFreelas(String mei, String areaFormacao, IdentificacaoGeral identificacaoGeral) {
+    public CadastroFreelas(String mei, String areaFormacao, String sobreMim, IdentificacaoGeral identificacaoGeral) {
         this.mei = mei;
         this.areaFormacao = areaFormacao;
+        this.sobreMim = sobreMim;
         this.identificacaoGeral = identificacaoGeral;
     }
 
@@ -58,6 +61,13 @@ public class CadastroFreelas {
 
     public IdentificacaoGeral getIdentificacaoGeral() {
         return identificacaoGeral;
+    }
+
+    public String getSobreMim() {
+        return sobreMim;}
+
+    public void setSobreMim(String sobreMim) {
+        this.sobreMim = sobreMim;
     }
 
     public void setIdentificacaoGeral(IdentificacaoGeral identificacaoGeral) {

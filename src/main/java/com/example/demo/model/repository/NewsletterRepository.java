@@ -11,6 +11,5 @@ import java.util.List;
 @Repository
 public interface NewsletterRepository extends JpaRepository<Newsletter, Long> {
 
-    @Query("SELECT i FROM Newsletter i WHERE i.email = :email")
-    List<Newsletter> listaNewsletterCadastrado(String email);
+    List<Newsletter> findByEmail (String email);
 }

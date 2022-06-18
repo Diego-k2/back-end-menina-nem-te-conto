@@ -2,20 +2,20 @@ package com.example.demo.model.service;
 
 import com.example.demo.model.entity.IdentificacaoGeral;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
+import java.util.Optional;
 
 public interface IdentificacaoGeralService {
 
     IdentificacaoGeral saveDepartment(IdentificacaoGeral department);
 
-    List<IdentificacaoGeral> listaPerfisContratantes();
-
     IdentificacaoGeral updateIdentificacaoGeral(IdentificacaoGeral identificacaoGeral);
 
-    List<IdentificacaoGeral> listaEmailCpf(String email, String cpf);
+    List<IdentificacaoGeral> findByEmail(String email);
 
-    IdentificacaoGeral fazLogin(String email, String senha);
+    List<IdentificacaoGeral> findByCpf(String cpf);
+
+    IdentificacaoGeral findByEmailAndLogin (String email, String senha);
 
     void deleteIdentificacaoGeralById(long identificacaoGeralid);
 

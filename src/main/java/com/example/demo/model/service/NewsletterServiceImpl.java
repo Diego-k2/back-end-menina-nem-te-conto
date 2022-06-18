@@ -24,7 +24,7 @@ public class NewsletterServiceImpl implements NewsletterService {
     }
 
     @Override
-    public List<Newsletter> listaNewsletterCadastrado(String email) {
-        return newsletterRepository.listaNewsletterCadastrado(email);
+    public List<Newsletter> findByEmail(String email) {
+        return newsletterRepository.findByEmail(email);
     }
 }

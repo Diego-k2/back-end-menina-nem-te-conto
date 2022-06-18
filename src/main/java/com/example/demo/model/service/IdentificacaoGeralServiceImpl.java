@@ -15,11 +15,9 @@ public class IdentificacaoGeralServiceImpl implements IdentificacaoGeralService 
     @Autowired
     private IdentificacaoGeralRepository identificacaoGeralRepository;
 
-    @Override
-    public IdentificacaoGeral saveDepartment(IdentificacaoGeral identificacaoGeral) {return identificacaoGeralRepository.save(identificacaoGeral);}
 
     @Override
-    public List<IdentificacaoGeral> listaPerfisContratantes() {return identificacaoGeralRepository.findAll();}
+    public IdentificacaoGeral saveDepartment(IdentificacaoGeral identificacaoGeral) {return identificacaoGeralRepository.save(identificacaoGeral);}
 
     @Override
     public IdentificacaoGeral updateIdentificacaoGeral(IdentificacaoGeral identificacaoGeral) {
@@ -69,14 +67,20 @@ public class IdentificacaoGeralServiceImpl implements IdentificacaoGeralService 
     }
 
     @Override
-    public List<IdentificacaoGeral> listaEmailCpf(String email, String cpf) {
-        return identificacaoGeralRepository.listaEmailCpf(email, cpf);
+    public List<IdentificacaoGeral> findByEmail(String email) {
+        return identificacaoGeralRepository.findByEmail(email);
     }
 
     @Override
-    public IdentificacaoGeral fazLogin(String email, String senha) {
+    public List<IdentificacaoGeral> findByCpf(String cpf) {
+        return identificacaoGeralRepository.findByCpf(cpf);
+    }
+
+    @Override
+    public IdentificacaoGeral findByEmailAndLogin(String email, String senha) {
         return identificacaoGeralRepository.fazerLogin(email, senha);
     }
+
 
     @Override
     public void deleteIdentificacaoGeralById(long identificacaoGeralid) {identificacaoGeralRepository.deleteById(identificacaoGeralid);}

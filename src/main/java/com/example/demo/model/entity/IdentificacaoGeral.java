@@ -1,5 +1,6 @@
 package com.example.demo.model.entity;
 
+
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +17,9 @@ public class IdentificacaoGeral {
 
     @Column(name = "sobrenome")
     private String sobrenome;
+
+    @Column(name = "nome_social")
+    private String nome_social;
 
     @Column(name = "cpf")
     private String cpf;
@@ -45,17 +49,20 @@ public class IdentificacaoGeral {
 
     public IdentificacaoGeral(){};
 
-    public IdentificacaoGeral(String nome, String sobrenome, String cpf, String dt_nascimento, String telefone, String cep,
-                              String email, String senha, String dt_cadastro) {
+    public IdentificacaoGeral(String nome, String sobrenome, String nome_social,
+                              String cpf, String dtNascimento, String telefone,
+                              String cep, String email, String senha,
+                              String dtCadastro) {
         this.nome = nome;
         this.sobrenome = sobrenome;
+        this.nome_social = nome_social;
         this.cpf = cpf;
-        this.dtNascimento = dt_nascimento;
+        this.dtNascimento = dtNascimento;
         this.telefone = telefone;
         this.cep = cep;
         this.email = email;
         this.senha = senha;
-        this.dtCadastro = dt_cadastro;
+        this.dtCadastro = dtCadastro;
     }
 
     public long getId() {
@@ -144,5 +151,29 @@ public class IdentificacaoGeral {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public String getNome_social() {
+        return nome_social;
+    }
+
+    public void setNome_social(String nome_social) {
+        this.nome_social = nome_social;
+    }
+
+    public String getDtNascimento() {
+        return dtNascimento;
+    }
+
+    public void setDtNascimento(String dtNascimento) {
+        this.dtNascimento = dtNascimento;
+    }
+
+    public String getDtCadastro() {
+        return dtCadastro;
+    }
+
+    public void setDtCadastro(String dtCadastro) {
+        this.dtCadastro = dtCadastro;
     }
 }

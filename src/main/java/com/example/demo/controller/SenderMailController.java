@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/sendMail")
@@ -40,7 +42,11 @@ public class SenderMailController {
 
         try {
             mailSender.send(message);
-            if(newsletterRepository.listaNewsletterCadastrado(email) == null){
+
+            List<String> listEmail = newsletterRepository.findByEmail(email).stream()
+                    .map(Newsletter::getEmail).collect(Collectors.toList());
+
+            if(listEmail.isEmpty() == true){
                 newsletterService.saveNewsletter(newsletter);
             }
             return "Email enviado com sucesso!";
